@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aegis Comply — MVP RegTech-платформы</title>
+  <script type="text/javascript" src="https://me.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=9JAzXXSlnTT6AIqhL4gd2rGb0CwxaR1ywtWXIlJHH_qAQLv0ncC_xZab1UvYGtwr49HeTtielRoJG75Jm83x_PO0sp2BxT4Op5vCH04EoJu6ZXEbl35hK-wfhqZTiMy2dD4_E_P0QNpHTbE9z56Fbud1EZ0aAYhNJva57EDceIRpy-dY26qJGb10ORh72GcDCK4BdrSp3DcnZYZYstCIVR3gTkCKuvdbhQ-EFuR0t40F7h3hJ98RiOiw84pSMGh3jAVjlwP74p32RNDOf4s2L6wmKS6Hr8bajGg8WaNYLCv7HK4oPwlPPcN8bE-ZtUCDqWUzu9SdKISFKfnYT-T5g-HUbvccaC9fmyf0MLx2Of5tfc6CXw0d2A7Cz0rzNrL1O8_pTcIO3YcyuJhsg2ngOWh4CRJXRg6FR3nqmGbfuEINew09DfP9JPOdcZzV4GBjpofR6K5AB7VS2lMQFPxIxKH2UfUF_rCgDs8xiKUp5_7zlEmN1Kfhz6Kfl9CAwhJ_A01pzJoN8Y1EaXQpqsw5Kpvl_1X6_QP1UjXFzi26zjfjCqeaFpQBcgk8a78nPld9vknqqOEVWeLuCDFUY78cfNN_1c-_LHPLgReg3coWpTnLfnV8VUgCmco7WgJeC1ToM5Tq9I92e6vMsYWXUzI9TLg5JrErMDobhMvKjDjjt01wUZkZl04Ceg8frPhbb5EjLqgU-KtNBPDpaWi8IenSvA" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://me.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly93ZWJhdHRhY2gubWFpbC55YW5kZXgubmV0L21lc3NhZ2VfcGFydF9yZWFsL2FlZ2lzX2NvbXBseV9tdnBfc2l0ZV9lbmhhbmNlZC5odG1sP25hbWU9YWVnaXNfY29tcGx5X212cF9zaXRlX2VuaGFuY2VkLmh0bWwmc2lkPVlXVnpYM05wWkRwN0ltRmxjMHRsZVVsa0lqb2lNVGM0SWl3aWFHMWhZMHRsZVVsa0lqb2lNVGM0SWl3aWFYWkNZWE5sTmpRaU9pSlFkVmhYWjB4b1NqZG9kVWx4YzFock9FRmFaRlZCUFQwaUxDSnphV1JDWVhObE5qUWlPaUpITWxBNGNYQlpiakZMVEVjMGVYQlRTVlJoYlhWQlpGZGljWFUzYWtNM1ZGaG5TREU1ZVU1RldFY3ZNVkY1WVRoa1owRk5NemxQTlZoNWRrdEpla016UW1KdWVHMVFTMUJWTlZsc1ZVUllTa3hGYmxVdmJXVk5TMDVUYWtrMFlVVlhSM0YxTTFsaGRtNXhUSFE1U0hKdE4yMW1XSGd5TWsxQ1NsZzNRbXRyWXlJc0ltaHRZV05DWVhObE5qUWlPaUpUY3pJMFVXWmFXWEp2TXpkbWJrOXBSekJKVUZneGRtRnNOVmxIUzJkVFluZ3JhSFZ1Y0ZoSFJHdG5QU0o5"/><script type="text/javascript" src="https://me.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=KMK5i5gFkpcpcX5gH9sxgFJOxHxfeTZ5fTeQWP8v-a2-BjpxwhexAy3aSdS6zBQ816TF4pzNPbxVtXcz3abTIK4e-asJXPVD7tlB3N6uB2dHw-VRTeIZ-e5qGlDVeKtL7E5ov41VEJjdXFdbhKnjS7q7hlvRV6OqLS0LOwWDFsIf3MY_9k2Tmy4j0BsC-uwqIsB9etQ_mWz3CFHks4poh_TnOM1XHoCgJcCX-hqdJNAVWDB3G67JwGsmJcv1G19Lo3Ada8TzLIEUsXu_hk3Nqw" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://me.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9jaGF0Z3B0LmNvbS9iYWNrZW5kLWFwaS9lc3R1YXJ5L2NvbnRlbnQ_aWQ9ZmlsZV8wMDAwMDAwMDM1Mjg3MWZiOGYwNTBmM2Y5NzhiN2ZiMiZ0cz00OTM2MTcmcD1mcyZjaWQ9MSZzaWc9NThmMDY0N2I0OWUzNDRjN2QxNDk5N2E2YmQxZGI1MmYwYzcwZTFmZmZkOWJmMzQzMzBiZGNjM2Q1MGI0MDY1NyZ2PTA"/><style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: Arial, sans-serif; background: #f4f6fb; color: #1f2937; }
+    header { background: linear-gradient(135deg, #0f172a, #1d4ed8); color: white; padding: 42px 8%; }
+    header h1 { margin: 0 0 12px; font-size: 44px; letter-spacing: -0.7px; }
+    header p { max-width: 920px; font-size: 18px; line-height: 1.55; margin: 0; color: #dbeafe; }
+    nav { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 28px; }
+    nav a { color: white; text-decoration: none; padding: 10px 16px; border: 1px solid rgba(255,255,255,0.35); border-radius: 999px; font-size: 14px; }
+    main { padding: 34px 8% 60px; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-bottom: 24px; }
+    .grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-bottom: 24px; }
+    .card { background: white; border-radius: 18px; padding: 22px; box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08); border: 1px solid #e5e7eb; }
+    .card h2, .card h3 { margin-top: 0; color: #111827; }
+    .card p, .card li { line-height: 1.55; font-size: 15px; }
+    .badge { display: inline-block; padding: 6px 10px; border-radius: 999px; background: #e0ecff; color: #1d4ed8; font-weight: bold; font-size: 12px; margin-bottom: 12px; }
+    .badge.dark { background: rgba(255,255,255,0.15); color: #fff; border: 1px solid rgba(255,255,255,0.25); }
+    .wide { grid-column: 1 / -1; }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; align-items: start; }
+    label { display: block; margin: 14px 0 6px; font-weight: 600; font-size: 14px; }
+    input, select, textarea { width: 100%; padding: 12px 13px; border-radius: 12px; border: 1px solid #cbd5e1; font-size: 14px; background: #f8fafc; }
+    textarea { min-height: 84px; resize: vertical; }
+    button { margin-top: 18px; width: 100%; border: none; border-radius: 14px; padding: 14px 18px; background: #1d4ed8; color: white; font-size: 16px; font-weight: 700; cursor: pointer; }
+    button.secondary { background: #0f172a; }
+    button.ghost { background: #eef2ff; color: #1d4ed8; border: 1px solid #bfdbfe; }
+    button:hover { filter: brightness(0.95); }
+    .result-box { border-radius: 16px; padding: 18px; background: #f8fafc; border: 1px solid #e2e8f0; margin-top: 12px; }
+    .risk { display: flex; justify-content: space-between; align-items: center; padding: 11px 0; border-bottom: 1px solid #e5e7eb; gap: 16px; }
+    .risk:last-child { border-bottom: none; }
+    .risk span:last-child { font-weight: 700; text-align: right; }
+    .low { color: #047857; }
+    .medium { color: #b45309; }
+    .high { color: #b91c1c; }
+    .critical { color: #7f1d1d; }
+    .summary-risk { text-align: center; padding: 22px; border-radius: 18px; background: #fff7ed; border: 1px solid #fed7aa; margin-bottom: 16px; }
+    .summary-risk strong { display: block; font-size: 28px; margin-top: 8px; color: #c2410c; }
+    .process { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-top: 16px; }
+    .step { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 16px; padding: 16px; text-align: center; font-size: 14px; line-height: 1.4; }
+    .step strong { display: block; color: #1d4ed8; margin-bottom: 6px; font-size: 20px; }
+    .footer-note { margin-top: 24px; font-size: 13px; color: #64748b; line-height: 1.5; }
+    .dossier { background: #ecfdf5; border: 1px solid #bbf7d0; border-radius: 16px; padding: 16px; margin-top: 14px; }
+    .dossier h4 { margin: 0 0 8px; color: #065f46; }
+    .metric { font-size: 28px; font-weight: 800; color: #1d4ed8; margin: 8px 0 4px; }
+    .small { font-size: 13px; color: #64748b; line-height: 1.45; }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+    .pill { padding: 8px 11px; border-radius: 999px; background: #f1f5f9; border: 1px solid #e2e8f0; font-size: 13px; }
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 12px; }
+    th, td { text-align: left; border-bottom: 1px solid #e5e7eb; padding: 12px; vertical-align: top; }
+    th { background: #f8fafc; color: #0f172a; }
+    .source-box { border-left: 4px solid #1d4ed8; padding: 10px 14px; background: #f8fafc; border-radius: 10px; margin: 12px 0; }
+    .proto-tag { display: inline-flex; align-items: center; gap: 6px; background: #ecfeff; color: #0e7490; padding: 7px 10px; border-radius: 999px; font-size: 12px; font-weight: 700; margin-right: 8px; }
+    @media print { nav, button { display: none; } body { background: white; } .card { box-shadow: none; break-inside: avoid; } header { padding: 28px; } main { padding: 24px; } }
+    @media (max-width: 1050px) { .grid, .grid4, .two-col, .process { grid-template-columns: 1fr; } header h1 { font-size: 32px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="badge dark">MVP RegTech-платформы для ВКР-стартапа</div>
+    <h1>Aegis Comply</h1>
+    <p>
+      Демонстрационный прототип цифровой платформы для первичной оценки санкционных,
+      экспортно-контрольных, юрисдикционных и финансовых рисков внешнеэкономической сделки.
+      MVP показывает не чат-бот, а самостоятельную web-платформу с логикой скоринга, комплаенс-досье и моделью дальнейшей интеграции с правовыми источниками.
+    </p>
+    <nav>
+      <a href="#problem">Проблема</a>
+      <a href="#solution">Решение</a>
+      <a href="#check">Проверка сделки</a>
+      <a href="#process">Схема процесса</a>
+      <a href="#market">Бизнес-модель</a>
+      <a href="#roadmap">Дорожная карта</a>
+      <a href="#legal">Юридическая рамка</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="grid" id="problem">
+      <div class="card">
+        <span class="badge">Проблема</span>
+        <h3>Санкционные риски</h3>
+        <p>МСП сталкиваются с риском блокировки платежей, отказа контрагентов и вторичных санкций при работе с международными цепочками поставок.</p>
+      </div>
+      <div class="card">
+        <span class="badge">Проблема</span>
+        <h3>Экспортный контроль</h3>
+        <p>Ошибки в квалификации товара двойного назначения могут привести к нарушению разрешительного порядка и административной либо уголовной ответственности.</p>
+      </div>
+      <div class="card">
+        <span class="badge">Проблема</span>
+        <h3>Нет единого контура проверки</h3>
+        <p>Проверка контрагента, товара, маршрута, банка и конечного использования часто проводится разрозненно, вручную и без единого доказательного отчёта.</p>
+      </div>
+    </section>
+
+    <section class="card wide" id="solution">
+      <h2>Что делает «Аегис»</h2>
+      <p>
+        «Аегис» рассматривает внешнеэкономическую операцию как совокупность связанных элементов:
+        контрагент, бенефициары, товар, маршрут, страна назначения, валюта расчёта, банк и конечное использование.
+        Платформа не заменяет юридическую экспертизу, а формирует риск-профиль сделки и комплаенс-досье для ответственного лица компании.
+      </p>
+      <div class="pill-list">
+        <span class="proto-tag">Rule-based скоринг</span>
+        <span class="proto-tag">Human-in-the-loop</span>
+        <span class="proto-tag">Комплаенс-досье</span>
+        <span class="proto-tag">MVP → SaaS</span>
+      </div>
+    </section>
+
+    <section class="grid4" id="modules">
+      <div class="card">
+        <h3>1. Контрагент</h3>
+        <p>Санкционный статус, страна регистрации, бенефициары, аффилированность и признаки повышенного риска.</p>
+      </div>
+      <div class="card">
+        <h3>2. Товар</h3>
+        <p>Код ТН ВЭД, техническое описание, признаки двойного назначения и необходимость дополнительной квалификации.</p>
+      </div>
+      <div class="card">
+        <h3>3. Маршрут</h3>
+        <p>Страны транзита и назначения, риск реэкспорта, инфраструктурные посредники и юрисдикционная экспозиция.</p>
+      </div>
+      <div class="card">
+        <h3>4. Расчёты</h3>
+        <p>Валюта, банк, корреспондентская инфраструктура и вероятность отказа в платёжном обслуживании.</p>
+      </div>
+    </section>
+
+    <section class="card wide" id="check">
+      <h2>Демонстрационная проверка сделки</h2>
+      <p class="small">Прототип использует эвристическую модель скоринга. В промышленной версии она дополняется подключением к санкционным спискам OFAC/EU/UN, российским и зарубежным перечням экспортного контроля, корпоративным реестрам и базам бенефициаров.</p>
+      <div class="two-col">
+        <form id="dealForm">
+          <label>Наименование контрагента</label>
+          <input id="counterparty" value="Global Trade Solutions LLC" />
+
+          <label>Страна регистрации контрагента</label>
+          <select id="country">
+            <option>Турция</option>
+            <option>ОАЭ</option>
+            <option>Китай</option>
+            <option>Казахстан</option>
+            <option>ЕС</option>
+            <option>США</option>
+          </select>
+
+          <label>Товар / технология</label>
+          <input id="goods" value="Промышленные электронные компоненты" />
+
+          <label>Код ТН ВЭД</label>
+          <input id="tnved" value="8542" />
+
+          <label>Страна транзита</label>
+          <select id="transit">
+            <option>Казахстан</option>
+            <option>Турция</option>
+            <option>ОАЭ</option>
+            <option>Китай</option>
+            <option>Нет транзита</option>
+          </select>
+
+          <label>Страна конечного назначения</label>
+          <select id="destination">
+            <option>Казахстан</option>
+            <option>Китай</option>
+            <option>ОАЭ</option>
+            <option>Турция</option>
+            <option>ЕС</option>
+          </select>
+
+          <label>Валюта расчёта</label>
+          <select id="currency">
+            <option>USD</option>
+            <option>EUR</option>
+            <option>CNY</option>
+            <option>RUB</option>
+            <option>AED</option>
+          </select>
+
+          <label>Описание конечного использования</label>
+          <textarea id="enduse">Использование в производственном оборудовании гражданского назначения.</textarea>
+
+          <button type="button" onclick="runCheck()">Сформировать риск-профиль</button>
+          <button type="button" class="secondary" onclick="generateDossier()">Сформировать комплаенс-отчёт</button>
+          <button type="button" class="ghost" onclick="window.print()">Сохранить/распечатать отчёт</button>
+        </form>
+
+        <div>
+          <div class="summary-risk" id="summaryBox">
+            Итоговая оценка риска
+            <strong id="totalRisk">Средний риск</strong>
+            <div class="small" id="scoreText">Скоринговая оценка: 5 / 10</div>
+          </div>
+
+          <div class="result-box">
+            <div class="risk"><span>Санкционный скрининг</span><span id="sanctionRisk" class="medium">Требуется доп. проверка</span></div>
+            <div class="risk"><span>Экспортный контроль</span><span id="exportRisk" class="high">Возможны признаки dual-use</span></div>
+            <div class="risk"><span>Юрисдикция и маршрут</span><span id="jurisdictionRisk" class="medium">Маршрут требует анализа</span></div>
+            <div class="risk"><span>Финансовая инфраструктура</span><span id="financeRisk" class="medium">Риск из-за валюты расчёта</span></div>
+          </div>
+
+          <div class="dossier" id="dossier">
+            <h4>Фрагмент комплаенс-досье</h4>
+            <p id="dossierText">
+              Проверка сформирована на основании введённых параметров сделки. Рекомендуется запросить сведения о конечном пользователе, проверить бенефициарную структуру контрагента и подтвердить отсутствие товара в перечнях экспортного контроля.
+            </p>
+          </div>
+
+          <div class="result-box" id="auditTrail">
+            <h4>Журнал проверки</h4>
+            <p class="small" id="auditText">Источник данных: демонстрационный набор правил MVP. Версия проверки: Aegis-MVP-0.3. Дата формирования: —</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card wide" id="process">
+      <h2>Схема работы платформы</h2>
+      <div class="process">
+        <div class="step"><strong>1</strong>Ввод параметров сделки</div>
+        <div class="step"><strong>2</strong>Проверка контрагента и бенефициаров</div>
+        <div class="step"><strong>3</strong>Квалификация товара и dual-use риск</div>
+        <div class="step"><strong>4</strong>Оценка маршрута, банка и валюты</div>
+        <div class="step"><strong>5</strong>Формирование комплаенс-досье</div>
+      </div>
+    </section>
+
+    <section class="grid" id="market">
+      <div class="card">
+        <span class="badge">TAM/SAM/SOM</span>
+        <h3>Рыночная логика</h3>
+        <div class="metric">проверка сделки</div>
+        <p>Единица спроса и монетизации — не абстрактная подписка, а проверка конкретной ВЭД-операции.</p>
+      </div>
+      <div class="card">
+        <span class="badge">Монетизация</span>
+        <h3>SaaS + pay-per-check</h3>
+        <p>Базовая подписка для МСП и пакетная тарификация для ВЭД-посредников, юридических фирм и комплаенс-практик.</p>
+      </div>
+      <div class="card">
+        <span class="badge">Ценность</span>
+        <h3>Измеримый эффект</h3>
+        <p>Сокращение времени проверки, снижение ручных ошибок, единый формат отчётности и доказуемость due diligence.</p>
+      </div>
+    </section>
+
+    <section class="card wide" id="segments">
+      <h2>Целевые пользователи и практический результат</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Сегмент</th><th>Проблема</th><th>Результат использования «Аегис»</th></tr></thead>
+          <tbody>
+            <tr><td>МСП-экспортёры и импортёры</td><td>Нет собственного комплаенс-отдела, высокая цена ошибки</td><td>Быстрая первичная проверка сделки и понятный риск-профиль</td></tr>
+            <tr><td>ВЭД-агенты и логистика</td><td>Большой поток клиентов и риск сопровождения проблемной сделки</td><td>Стандартизация проверки и единый формат отчётности</td></tr>
+            <tr><td>Юридические фирмы</td><td>Трудоёмкий ручной due diligence</td><td>Первичный комплаенс-отчёт как основа экспертного заключения</td></tr>
+            <tr><td>Финансовые посредники</td><td>Риск отказов и блокировок из-за санкционных триггеров</td><td>Документированное обоснование принятого комплаенс-решения</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card wide" id="roadmap">
+      <h2>Дорожная карта развития MVP</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Этап</th><th>Что реализуется</th><th>KPI</th><th>Критерий перехода</th></tr></thead>
+          <tbody>
+            <tr><td>MVP</td><td>Web-интерфейс, rule-based скоринг, комплаенс-досье</td><td>Проверка ≤ 10 минут, отчёт в едином формате</td><td>Положительная апробация на типовых кейсах</td></tr>
+            <tr><td>Пилот</td><td>Проверка 10–20 типовых ВЭД-сценариев</td><td>Снижение ручных уточнений, стабильность результата</td><td>Подтверждение ценности пользователями</td></tr>
+            <tr><td>Интеграции</td><td>Подключение санкционных списков, реестров и баз данных</td><td>Версионность источников, журналирование проверок</td><td>Готовность к B2B-доступу</td></tr>
+            <tr><td>Масштабирование</td><td>API, партнёрские кабинеты, отраслевые пакеты</td><td>Рост повторных пользователей и снижение CAC</td><td>Выход на коммерческую модель SaaS</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h3>Для МСП</h3>
+        <p>Снижение времени первичной проверки сделки и понятная структура рисков без необходимости содержать полноценный комплаенс-отдел.</p>
+      </div>
+      <div class="card">
+        <h3>Для ВЭД-посредников</h3>
+        <p>Стандартизация проверки клиентов и сделок, повышение пропускной способности и единый формат отчётности.</p>
+      </div>
+      <div class="card">
+        <h3>Для юридических практик</h3>
+        <p>Подготовка первичного риск-профиля и комплаенс-досье как основы для последующей экспертной правовой оценки.</p>
+      </div>
+    </section>
+
+    <section class="card wide" id="legal">
+      <h2>Юридическая рамка MVP</h2>
+      <p>
+        Прототип демонстрирует модель системы поддержки принятия решений. Итоговая оценка не является юридическим заключением и требует проверки ответственным специалистом. Такой подход соответствует принципу human-in-the-loop: ИИ и алгоритмы помогают структурировать информацию, но не подменяют профессиональное решение пользователя.
+      </p>
+      <div class="source-box">
+        <strong>Ограничение MVP:</strong> текущая версия использует демонстрационные правила скоринга. Промышленная версия предполагает подключение официальных санкционных перечней, реестров, классификаторов, перечней экспортного контроля и базы нормативных источников с фиксацией версии данных на момент проверки.
+      </div>
+      <p class="footer-note">
+        Aegis Comply MVP создан для демонстрации в рамках выпускной квалификационной работы в виде стартап-проекта. Все расчёты и результаты в интерфейсе имеют демонстрационный характер.
+      </p>
+    </section>
+  </main>
+
+  <script>
+    function runCheck() {
+      const country = document.getElementById('country').value;
+      const destination = document.getElementById('destination').value;
+      const transit = document.getElementById('transit').value;
+      const currency = document.getElementById('currency').value;
+      const tnved = document.getElementById('tnved').value.trim();
+      const goods = document.getElementById('goods').value.trim();
+      const counterparty = document.getElementById('counterparty').value.trim();
+      const enduse = document.getElementById('enduse').value.trim();
+
+      let score = 0;
+      let sanctions = 'Совпадений не выявлено';
+      let exportRisk = 'Низкая вероятность dual-use';
+      let jurisdiction = 'Критичных совпадений нет';
+      let finance = 'Низкий риск';
+      let recommendations = [];
+
+      if (country === 'ОАЭ' || country === 'Турция' || country === 'Казахстан') {
+        score += 1;
+        sanctions = 'Требуется доп. проверка цепочки поставки';
+        recommendations.push('проверить бенефициарную структуру и связи контрагента');
+      }
+
+      if (country === 'ЕС' || country === 'США') {
+        score += 2;
+        sanctions = 'Повышенная санкционная чувствительность юрисдикции';
+        recommendations.push('проверить применимость санкционных режимов ЕС/США');
+      }
+
+      if (destination === 'ОАЭ' || destination === 'Турция' || transit === 'ОАЭ' || transit === 'Турция') {
+        score += 1;
+        jurisdiction = 'Маршрут требует анализа реэкспортного риска';
+        recommendations.push('получить подтверждение конечного пользователя и цели использования');
+      }
+
+      if (currency === 'USD' || currency === 'EUR') {
+        score += 1;
+        finance = 'Риск из-за валюты расчёта и банковской инфраструктуры';
+        recommendations.push('оценить банк и корреспондентский маршрут платежа');
+      }
+
+      if (tnved.startsWith('84') || tnved.startsWith('85') || goods.toLowerCase().includes('электрон') || goods.toLowerCase().includes('компонент')) {
+        score += 2;
+        exportRisk = 'Возможны признаки товара двойного назначения';
+        recommendations.push('сопоставить характеристики товара с перечнями экспортного контроля');
+      }
+
+      if (enduse.length < 40 || enduse.toLowerCase().includes('неизвест')) {
+        score += 1;
+        recommendations.push('уточнить конечное использование продукции');
+      }
+
+      const total = score >= 6 ? 'Высокий риск' : score >= 3 ? 'Средний риск' : 'Низкий риск';
+
+      updateRisk('totalRisk', total);
+      updateRisk('sanctionRisk', sanctions);
+      updateRisk('exportRisk', exportRisk);
+      updateRisk('jurisdictionRisk', jurisdiction);
+      updateRisk('financeRisk', finance);
+      document.getElementById('scoreText').innerText = `Скоринговая оценка: ${score} / 10`;
+
+      const uniqueRecs = [...new Set(recommendations)];
+      const recText = uniqueRecs.length ? uniqueRecs.join('; ') : 'дополнительные действия не требуются, рекомендуется сохранить отчёт проверки';
+
+      document.getElementById('dossierText').innerText =
+        `По сделке с контрагентом ${counterparty || 'не указан'} система сформировала предварительный риск-профиль: ${total.toLowerCase()}. ` +
+        `Проверяемый товар: ${goods || 'не указан'}, код ТН ВЭД: ${tnved || 'не указан'}, транзит: ${transit}, конечное назначение: ${destination}, валюта: ${currency}. ` +
+        `Рекомендации: ${recText}.`;
+
+      document.getElementById('auditText').innerText =
+        `Источник данных: демонстрационный набор правил MVP. Версия проверки: Aegis-MVP-0.3. Дата формирования: ${new Date().toLocaleString('ru-RU')}. ` +
+        `Проверка не является юридическим заключением и требует подтверждения ответственным специалистом.`;
+    }
+
+    function generateDossier() {
+      runCheck();
+      alert('Комплаенс-отчёт сформирован в демонстрационном виде. Для сохранения нажмите «Сохранить/распечатать отчёт».');
+    }
+
+    function updateRisk(id, text) {
+      const el = document.getElementById(id);
+      el.innerText = text;
+      el.className = '';
+      const t = text.toLowerCase();
+      if (t.includes('высок') || t.includes('dual-use') || t.includes('повыш')) {
+        el.classList.add('high');
+      } else if (t.includes('сред') || t.includes('треб') || t.includes('риск')) {
+        el.classList.add('medium');
+      } else {
+        el.classList.add('low');
+      }
+    }
+
+    runCheck();
+  </script>
+</body>
+</html>
